@@ -1,6 +1,5 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { GITHUB_TOKEN } from "./constant";
 
 export const createApolloClient = () => {
   const httpLink = createHttpLink({
@@ -10,7 +9,7 @@ export const createApolloClient = () => {
   const authLink = setContext((_, { headers }) => ({
     headers: {
       ...headers,
-      authorization: `Bearer ${GITHUB_TOKEN}`,
+      authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
     },
   }));
 
