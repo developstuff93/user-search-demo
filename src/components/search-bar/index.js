@@ -7,9 +7,6 @@ export default function SearchBar() {
   const { searchUsers } = useAppState();
 
   const handleQueryChange = (e) => {
-    if (e.target.value.length < MIN_QUERY_LENGTH) {
-      return;
-    }
     searchUsers(e.target.value);
   };
   // avoid too many API calls
@@ -20,7 +17,7 @@ export default function SearchBar() {
       <input
         className={styles.search}
         onChange={debounceChange}
-        placeholder="Please input the username or email"
+        placeholder={`Please input the username or email (Minimum ${MIN_QUERY_LENGTH})`}
       />
     </div>
   );
