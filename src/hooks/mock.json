@@ -1,0 +1,85 @@
+{
+  "data": {
+    "search": {
+      "userCount": 327873,
+      "pageInfo": {
+        "hasNextPage": true,
+        "hasPreviousPage": true,
+        "endCursor": "Y3Vyc29yOjEw",
+        "startCursor": "Y3Vyc29yOjY="
+      },
+      "nodes": [
+        {
+          "id": "MDQ6VXNlcjE5NDA5",
+          "url": "https://github.com/devongovett",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/19409?u=92d068dffb5d6885767709af7bc4ef8ddcb356b2&v=4",
+          "login": "devongovett",
+          "name": "Devon Govett",
+          "email": "devongovett@gmail.com",
+          "location": "San Francisco",
+          "createdAt": "2008-08-03T13:39:41Z",
+          "updatedAt": "2022-06-25T03:26:47Z",
+          "repositories": {
+            "totalCount": 229
+          }
+        },
+        {
+          "id": "MDQ6VXNlcjI1MzM0MTI5",
+          "url": "https://github.com/DevonCrawford",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/25334129?u=f7db1d682d6637b7c775f6fcd01da4b5ef3b3ec7&v=4",
+          "login": "DevonCrawford",
+          "name": "Devon Crawford",
+          "email": "",
+          "location": null,
+          "createdAt": "2017-01-24T23:06:20Z",
+          "updatedAt": "2021-05-02T21:03:01Z",
+          "repositories": {
+            "totalCount": 10
+          }
+        },
+        {
+          "id": "MDQ6VXNlcjE2NjkzMDQz",
+          "url": "https://github.com/developer-guy",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/16693043?u=56bb3313442557773b8f1ba4058aaa6ae0d59a63&v=4",
+          "login": "developer-guy",
+          "name": "Batuhan Apaydın",
+          "email": "developerguyn@gmail.com",
+          "location": "compromised",
+          "createdAt": "2016-01-13T22:01:59Z",
+          "updatedAt": "2022-08-20T19:16:41Z",
+          "repositories": {
+            "totalCount": 529
+          }
+        },
+        {
+          "id": "MDQ6VXNlcjIxNTcyNQ==",
+          "url": "https://github.com/devunwired",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/215725?u=224f5a8a3b0302a9a774c7d8c1a25a247ef80a2e&v=4",
+          "login": "devunwired",
+          "name": "Dave Smith",
+          "email": "",
+          "location": "Denver, CO",
+          "createdAt": "2010-03-04T15:16:41Z",
+          "updatedAt": "2022-06-01T15:59:50Z",
+          "repositories": {
+            "totalCount": 48
+          }
+        },
+        {
+          "id": "MDQ6VXNlcjE2Mzk3MjA=",
+          "url": "https://github.com/DevenLu",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/1639720?v=4",
+          "login": "DevenLu",
+          "name": null,
+          "email": "",
+          "location": null,
+          "createdAt": "2012-04-13T09:07:17Z",
+          "updatedAt": "2022-01-13T16:28:51Z",
+          "repositories": {
+            "totalCount": 3904
+          }
+        }
+      ]
+    }
+  }
+}

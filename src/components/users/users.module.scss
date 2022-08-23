@@ -1,0 +1,16 @@
+.users {
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: center;
+  }
+}
+
+.user {
+  .avatar {
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
