@@ -1,16 +1,24 @@
+import { ApolloProvider } from "@apollo/client";
 import AppStateProvider from "./hooks/AppStateProvider";
-import "./App.scss";
 import SearchBar from "./components/search-bar";
 import Users from "./components/users";
+import Header from "./components/header";
+import { createApolloClient } from "./utils/create-apollo-client";
+import styles from "./App.module.scss";
 
 function App() {
+  const { apolloClient } = createApolloClient();
+
   return (
-    <AppStateProvider>
-      <div className="app-root">
-        <SearchBar />
-        <Users />
-      </div>
-    </AppStateProvider>
+    <ApolloProvider client={apolloClient}>
+      <AppStateProvider>
+        <div className={styles.root}>
+          <Header />
+          <SearchBar />
+          <Users />
+        </div>
+      </AppStateProvider>
+    </ApolloProvider>
   );
 }
 
