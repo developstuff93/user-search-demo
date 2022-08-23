@@ -1,7 +1,7 @@
-import { Octokit } from "octokit";
+import { useLazyQuery } from "@apollo/client";
 import { createContext, useContext, useState } from "react";
-import { GITHUB_TOKEN, MIN_QUERY_LENGTH } from "../utils/constant";
-import mock from "./mock.json";
+import { GET_USERS } from "../graphql/fetch-users";
+import { MIN_QUERY_LENGTH, USERS_LIMIT } from "../utils/constant";
 
 const AppContext = createContext({});
 
@@ -11,32 +11,34 @@ export const useAppState = () => {
 };
 
 export default function AppStateProvider({ children }) {
-  const [loadingUsers, setLoadingUsers] = useState(false);
+  const [users, setUsers] = useState([]);
   // TODO: implement pagination if needed, for now displaying limited number of users
-  const [users, setUsers] = useState(mock.data.search.nodes);
+  const [fetchUsers, { loading: loadingUsers }] = useLazyQuery(GET_USERS, {
+    onCompleted: (data) => {
+      setUsers(data?.search?.nodes || []);
+    },
+    onError: () => {
+      setUsers([]);
+    },
+  });
+
   const searchUsers = async (query) => {
     if (query.length < MIN_QUERY_LENGTH) {
+      setUsers([]);
       return;
     }
-    try {
-      setLoadingUsers(true);
-      const octokit = new Octokit({
-        auth: GITHUB_TOKEN,
-      });
-      await octokit.request("GET /search/users", { q: query });
-      setUsers(mock.data.search.nodes);
-    } catch (err) {
-      setUsers([]);
-      console.log(err);
-    } finally {
-      setLoadingUsers(false);
-    }
+    fetchUsers({
+      variables: {
+        query,
+        limit: USERS_LIMIT,
+      },
+    });
   };
 
   const value = {
+    loadingUsers,
     searchUsers,
     users,
-    loadingUsers,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
